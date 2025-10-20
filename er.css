@@ -1,0 +1,164 @@
+@font-face { font-family: minecraft; src: url('MinecraftTen-VGORe.ttf'); } 
+body{height:100vh;overflow: hidden;
+}
+h1, p{font-family: minecraft;color: wheat;}
+
+
+
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.content-1 {
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff1f1;
+  padding: 20px;
+  width: 50%;
+  max-width: 500px;
+  border-radius: 30px;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 0 20px 5px rgba(255, 255, 0, 0.3);
+}
+
+.container * {border-radius: 50px;}
+li{margin-bottom: 10px;}
+.content-1:hover,
+.content-1:active {
+  transform: scale(1.1);
+  background: rgba(0,0,0,0.8);
+  animation: glow 0.6s ease-in-out forwards;
+}
+
+@keyframes glow {
+  0%   { box-shadow: 0 0 20px 5px yellow; }
+  50%  { box-shadow: 0 0 80px 30px gold; }
+  100% { box-shadow: 0 0 40px 10px orange; }
+}
+
+@keyframes growing {
+  0%{transform: scale(1.0);}
+
+  100%{transform: scale(1.1);
+  background: rgba(0,0,0,0.8);}
+}
+@keyframes notgrowing {
+   0% {
+    transform: scale(1.1);
+    background: rgba(0,0,0,0.8);
+  }
+  100% {
+    transform: scale(1);
+    background: rgba(0,0,0,0.5);
+  }        
+
+}  
+@keyframes revealword {
+            0%{opacity: 0;
+            }
+            100%{opacity: 1;}
+        }
+
+  @keyframes pulse-glow {
+    from { box-shadow: 0 0 30px 10px yellow; }
+    to { box-shadow: 0 0 50px 20px gold; }
+}
+ .word:hover {
+      opacity: 0;
+      display:inline-block;
+      animation: revealword 1s forwards;
+      margin-right: 3px;
+      position: relative;
+    }
+
+        .word:nth-child(1){animation-delay: 0.2s;
+        }
+        .word:nth-child(2){animation-delay: 0.4s;
+        }
+        .word:nth-child(3){animation-delay: 0.4s;}
+        .word:nth-child(n){animation-delay: 0.6s;}   
+.content-1{
+  cursor: pointer;
+  animation: notgrowing 1s ease-in-out backwards;}
+  .word{opacity: 0;}
+
+
+
+.pulsing-element {
+  animation: pulse-glow 1s infinite alternate;
+}
+        
+    #table {
+      display: flex;
+      ;padding: 0px;
+      flex-direction: column;
+      height: 100%;
+       background: rgba(0,0,0,0.8)
+      
+
+
+    }
+    .ro-1, .ro-2, .ro-3, .ro-4{
+      display: flex;
+      flex: 1 1 100%;
+    }
+   #table div:nth-child(11) {padding: 0;
+      background-color: red;
+    }
+    #table div:nth-child(13){background-color:lightgreen;}
+    #table div {
+        flex: 1; 
+        padding: 15px;
+        border: 1px solid none;
+        font-size: 1.2em;
+        cursor: pointer;
+        text-align: center;
+    }
+    #ca{color:lightblue;z-index: 1;width: auto;font-size: 4em;margin-bottom: 50px;}
+    #table div:hover{cursor: pointer;}
+    .ri{position: relative;z-index: 1;}
+
+#fade, #rick {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  transition: opacity 2s;
+  pointer-events: none; /* clicks pass through when hidden */
+}
+
+#fade {
+  background: black;
+  opacity: 0;
+  z-index: 999;
+}
+
+#rick {
+  object-fit: cover;
+  opacity: 0;
+  z-index: 1000;
+  display: none;
+} #rick {
+  pointer-events: none; /* allow clicks to pass through when hidden */
+}
+#myVideo {
+  position: fixed;   
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: cover;  
+  z-index: -1;
+  background-size: cover;
+}
